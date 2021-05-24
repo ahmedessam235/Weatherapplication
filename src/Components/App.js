@@ -1,9 +1,9 @@
 import React from "react";
-import BackgroundImage from "./BackgroundImage/BackgroundImage";
+import Header from "./Header/Header";
 function App() {
   return (
     <div>
-      <BackgroundImage />
+      <Header />
     </div>
   );
 }
