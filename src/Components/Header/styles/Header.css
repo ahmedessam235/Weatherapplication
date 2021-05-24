@@ -1,3 +1,28 @@
 .Header{
     color: white;
+    font-family: 'Inter';
+    display: flex;  
+    justify-content: space-between;
+    margin-left: 6%;
+    margin-top: 2%;
+}
+.TemperatureButtons {
+    margin-right: 6%;
+    
+}
+#Celsius-button{
+    color: white;
+}
+#Celsius-button:hover{
+    background-color:rgba(247, 234, 234,0.5);
+}
+#Fahrenheit-button{
+    color:white;
+}
+#Fahrenheit-button:hover{
+    background-color:rgba(247, 234, 234, 0.5);
+}
+@media (min-width: 1200px){}
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: initial;
 }
