@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import CurrentTemperture from "./Currenttemperature/CurrentTemperature";
+import DailyAndHourlyTemperature from "./DailyAndHourlyTemperature/DailyAndHourlyTemperature";
 import Header from "./Header/Header";
 
 function App() {
   const [temperatureReadings, saveTemperaturedata] = useState(0);
-
+  const [measurementUnit , changeMeasurementUinit] = useState("F");
   useEffect(async () => {
     /* this is a work around for the API because they have disabled the CORS this solutin will not work if the aplication is deployed */
 
@@ -14,17 +15,27 @@ function App() {
     const temperatureData = await response.json();
     saveTemperaturedata(temperatureData);
   }, []);
-
+  function ConvertToCelsuis (){
+    changeMeasurementUinit("C")
+  }
+  function ConvertToFahrenheit() {
+    changeMeasurementUinit("F")
+  }
+console.log(measurementUnit);
   if (temperatureReadings) {
     console.log("value updated");
     console.log(temperatureReadings);
     return (
       <div>
-        <Header />
+        <Header 
+          onConversiontoCelsuis = {ConvertToCelsuis}
+          onConversiontoFahrenheit = {ConvertToFahrenheit}
+        />
         <CurrentTemperture
           date={temperatureReadings.currently.time}
           summary={temperatureReadings.currently.summary}
-          currentTemperature={parseInt(
+          currentTemperature={
+           parseInt(
             temperatureReadings.currently.temperature
           )}
           maxTemperature={parseInt(
@@ -33,8 +44,22 @@ function App() {
           minTemperature={parseInt(
             temperatureReadings.daily.data[0].apparentTemperatureLow
           )}
+          unit = {measurementUnit}
           todaySummary={temperatureReadings.daily.data[0].summary}
         />
+        {temperatureReadings.daily.data.map((temperatureItem, index) => {
+          return (
+            <DailyAndHourlyTemperature
+              key={index}
+              id={index}
+              maxDailyTemperature={parseInt(
+                temperatureItem.apparentTemperatureHigh
+              )}
+              day={temperatureItem.time}
+              unit = {measurementUnit}
+            />
+          );
+        })}
       </div>
     );
   } else {

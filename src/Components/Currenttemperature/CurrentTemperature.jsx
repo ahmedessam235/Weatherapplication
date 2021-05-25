@@ -26,7 +26,21 @@ function calculteDate(TodayDate) {
 }
 
 function CurrentTemperture(props) {
+  
   const todayData = calculteDate(props.date);
+  var todayTemperature = 0;
+  var maximumTemperature = 0;
+  var minimmTemperature = 0;
+  if (props.unit === "C"){
+    todayTemperature = parseInt((props.currentTemperature -32) *(5/9));
+    maximumTemperature = parseInt((props.maxTemperature -32) *(5/9));;
+    minimmTemperature = parseInt((props.minTemperature -32) *(5/9));;
+  }
+  else {
+    todayTemperature = props.currentTemperature;
+    maximumTemperature = props.maxTemperature;
+    minimmTemperature = props.minTemperature;
+  }
   return (
     <div className="CurrentTemperature">
       <div className="leftSideReadings">
@@ -42,10 +56,10 @@ function CurrentTemperture(props) {
       </div>
       <div class="rightSideReadings">
         <h1 className="realtimeTemperature">
-          {props.currentTemperature}&#xb0;{" "}
+          {todayTemperature}&#xb0;{" "}
         </h1>
         <h2 className="minAndMaxTemperature">
-          {props.maxTemperature}&#xb0; / {props.minTemperature}&#xb0;
+          {maximumTemperature}&#xb0; / {minimmTemperature}&#xb0;
         </h2>
         <p className="todaySummary">{props.todaySummary}</p>
       </div>
