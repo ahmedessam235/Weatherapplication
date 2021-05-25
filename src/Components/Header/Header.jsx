@@ -10,10 +10,10 @@ function Header() {
         <b>INSTAWEATHER</b>
       </h2>
       <div className="TemperatureButtons">
-        <button id="Celsius-button" class="btn btn-primary-outline">
+        <button id="Celsius-button" className="btn btn-primary-outline">
           C
         </button>
-        <button id="Fahrenheit-button" class="btn btn-primary-outline">
+        <button id="Fahrenheit-button" className="btn btn-primary-outline">
           F
         </button>
       </div>
