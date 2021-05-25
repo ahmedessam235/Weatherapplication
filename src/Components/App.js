@@ -5,7 +5,7 @@ import Header from "./Header/Header";
 
 function App() {
   const [temperatureReadings, saveTemperaturedata] = useState(0);
-  const [measurementUnit , changeMeasurementUinit] = useState("F");
+  const [measurementUnit, changeMeasurementUinit] = useState("F");
   useEffect(async () => {
     /* this is a work around for the API because they have disabled the CORS this solutin will not work if the aplication is deployed */
 
@@ -15,27 +15,26 @@ function App() {
     const temperatureData = await response.json();
     saveTemperaturedata(temperatureData);
   }, []);
-  function ConvertToCelsuis (){
-    changeMeasurementUinit("C")
+  function ConvertToCelsuis() {
+    changeMeasurementUinit("C");
   }
   function ConvertToFahrenheit() {
-    changeMeasurementUinit("F")
+    changeMeasurementUinit("F");
   }
-console.log(measurementUnit);
+  console.log(measurementUnit);
   if (temperatureReadings) {
     console.log("value updated");
     console.log(temperatureReadings);
     return (
       <div>
-        <Header 
-          onConversiontoCelsuis = {ConvertToCelsuis}
-          onConversiontoFahrenheit = {ConvertToFahrenheit}
+        <Header
+          onConversiontoCelsuis={ConvertToCelsuis}
+          onConversiontoFahrenheit={ConvertToFahrenheit}
         />
         <CurrentTemperture
           date={temperatureReadings.currently.time}
           summary={temperatureReadings.currently.summary}
-          currentTemperature={
-           parseInt(
+          currentTemperature={parseInt(
             temperatureReadings.currently.temperature
           )}
           maxTemperature={parseInt(
@@ -44,9 +43,10 @@ console.log(measurementUnit);
           minTemperature={parseInt(
             temperatureReadings.daily.data[0].apparentTemperatureLow
           )}
-          unit = {measurementUnit}
+          unit={measurementUnit}
           todaySummary={temperatureReadings.daily.data[0].summary}
         />
+
         {temperatureReadings.daily.data.map((temperatureItem, index) => {
           return (
             <DailyAndHourlyTemperature
@@ -56,7 +56,7 @@ console.log(measurementUnit);
                 temperatureItem.apparentTemperatureHigh
               )}
               day={temperatureItem.time}
-              unit = {measurementUnit}
+              unit={measurementUnit}
             />
           );
         })}

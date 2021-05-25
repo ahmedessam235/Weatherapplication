@@ -18,21 +18,23 @@ function getDayOfTheWeek(TodayDate) {
 function DailyAndHourlyTemperature(props) {
   var maximumDailyTemperature = 0;
 
-  if (props.unit === "C"){
-    maximumDailyTemperature = parseInt((props.maxDailyTemperature -32) *(5/9));
-  }
-  else {
+  if (props.unit === "C") {
+    maximumDailyTemperature = parseInt(
+      (props.maxDailyTemperature - 32) * (5 / 9)
+    );
+  } else {
     maximumDailyTemperature = props.maxDailyTemperature;
-  
   }
   var dayOfTheWeek = getDayOfTheWeek(props.day);
-  if (props.id === 0 ){
-    dayOfTheWeek ="Today"
+  if (props.id === 0) {
+    dayOfTheWeek = "Today";
   }
   return (
     <div className="DailyAndHourlyTemperature">
-      <p>{maximumDailyTemperature}</p>
-      <p>{dayOfTheWeek}</p>
+      <div className="test">
+        <p className="temperatureSummary">{maximumDailyTemperature}</p>
+        <p className="hourly-daily-time">{dayOfTheWeek}</p>
+      </div>
     </div>
   );
 }
