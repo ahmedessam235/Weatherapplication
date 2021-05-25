@@ -26,7 +26,7 @@ function DailyAndHourlyTemperature(props) {
     maximumDailyTemperature = props.maxDailyTemperature;
   }
   var dayOfTheWeek = getDayOfTheWeek(props.day);
-  if (props.id === 0) {
+  if (props.id === 0) { //handles the case of the current day to be viewed as Today not by day in hourly view same implementation is needed
     dayOfTheWeek = "Today";
   }
   return (

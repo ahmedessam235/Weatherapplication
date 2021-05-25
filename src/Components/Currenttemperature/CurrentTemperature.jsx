@@ -30,7 +30,8 @@ function CurrentTemperture(props) {
   var todayTemperature = 0;
   var maximumTemperature = 0;
   var minimmTemperature = 0;
-  if (props.unit === "C") {
+  /* this if condtions handles the conversions of the temperature between celsuis and fahrenite by default the temperature is in fahrenite */
+  if (props.unit === "C") { 
     todayTemperature = parseInt((props.currentTemperature - 32) * (5 / 9));
     maximumTemperature = parseInt((props.maxTemperature - 32) * (5 / 9));
     minimmTemperature = parseInt((props.minTemperature - 32) * (5 / 9));
