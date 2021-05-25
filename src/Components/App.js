@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CurrentTemperture from "./Currenttemperature/CurrentTemperature";
 import Header from "./Header/Header";
 
 function App() {
@@ -17,13 +18,32 @@ function App() {
   if (temperatureReadings) {
     console.log("value updated");
     console.log(temperatureReadings);
+    return (
+      <div>
+        <Header />
+        <CurrentTemperture
+          date={temperatureReadings.currently.time}
+          summary={temperatureReadings.currently.summary}
+          currentTemperature={parseInt(
+            temperatureReadings.currently.temperature
+          )}
+          maxTemperature={parseInt(
+            temperatureReadings.daily.data[0].apparentTemperatureHigh
+          )}
+          minTemperature={parseInt(
+            temperatureReadings.daily.data[0].apparentTemperatureLow
+          )}
+          todaySummary={temperatureReadings.daily.data[0].summary}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h1> Loading ......</h1>
+      </div>
+    );
   }
-
-  return (
-    <div>
-      <Header />
-    </div>
-  );
 }
 
 export default App;
