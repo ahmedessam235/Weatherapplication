@@ -14,3 +14,18 @@
 .loading-screen{
   color: white;
 }
+#topline {
+  background-color:white;
+  margin: 0%;
+  width:86%;
+  margin: 0 auto;
+
+}
+#bottomline{
+  background-color:white;
+  margin: 0%;
+  width:86%;
+ 
+  margin: 0 auto;
+  margin-top:6%
+}

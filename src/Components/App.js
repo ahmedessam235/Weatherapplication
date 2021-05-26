@@ -48,6 +48,7 @@ function App() {
           todaySummary={temperatureReadings.daily.data[0].summary}
         />
        0<DailyAndHourlyButtons />
+       <hr id= "topline"></hr>
         {temperatureReadings.daily.data.map((temperatureItem, index) => {
           return (
             <DailyAndHourlyTemperature
@@ -61,6 +62,7 @@ function App() {
             />
           );
         })}
+        <hr id= "bottomline"></hr>  
       </div>
     );
   } else {
