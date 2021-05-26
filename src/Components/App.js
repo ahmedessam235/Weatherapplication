@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CurrentTemperture from "./Currenttemperature/CurrentTemperature";
 import DailyAndHourlyTemperature from "./DailyAndHourlyTemperature/DailyAndHourlyTemperature";
+import DailyAndHourlyButtons from "./DailyAndHourlyButtons/DailyAndHourlyButtons"
 import Header from "./Header/Header";
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
           unit={measurementUnit}
           todaySummary={temperatureReadings.daily.data[0].summary}
         />
-
+       0<DailyAndHourlyButtons />
         {temperatureReadings.daily.data.map((temperatureItem, index) => {
           return (
             <DailyAndHourlyTemperature

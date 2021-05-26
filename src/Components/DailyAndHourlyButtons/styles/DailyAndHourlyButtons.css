@@ -1,0 +1,16 @@
+.DailyAndHourlyButtons{
+    margin-left:6.5%;
+}
+#Hourly-button{
+    color: white;
+}
+#Hourly-button:hover{
+    background-color:rgba(247, 234, 234,0.5);
+}
+
+#Daily-button{
+    color:white;
+}
+#Daily-button:hover{
+    background-color:rgba(247, 234, 234, 0.5);
+}

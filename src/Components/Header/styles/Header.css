@@ -12,6 +12,8 @@
 }
 #Celsius-button{
     color: white;
+    border-right: 1px solid white;
+
 }
 #Celsius-button:hover{
     background-color:rgba(247, 234, 234,0.5);
