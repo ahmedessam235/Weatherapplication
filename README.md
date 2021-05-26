@@ -3,6 +3,7 @@ The Web app get the maximum, lowsest, current, weekly and hourly Temperature of 
 HOW TO RUN : 
 - install NPM and Node.
 - inside the directory in folder weather-app run the following commands from the commandline : 1 - npm install 2 - npm run.
+- when you enter the website enter  the URL https://cors-anywhere.herokuapp.com/ and request temporoay access to use the Dark Sky Api.
 
 Missing Implementation :
  - Hourly temperature reading 
