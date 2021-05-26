@@ -1,7 +1,8 @@
 import React from "react";
 import "./styles/DailyAndHourlyTemperature.css";
 
-function getDayOfTheWeek(TodayDate) {    //TO - Do import this function from CurrentTemperature module.
+function getDayOfTheWeek(TodayDate) {
+  //TO - Do import this function from CurrentTemperature module.
   var dateConstructor = new Date(TodayDate * 1000);
   var days = [
     "Sunday",
@@ -31,9 +32,9 @@ function DailyAndHourlyTemperature(props) {
     dayOfTheWeek = "Today";
   }
   return (
-    <div className="DailyAndHourlyTemperature">    
-        <p className="temperatureSummary">{maximumDailyTemperature}</p>
-        <p className="hourly-daily-time">{dayOfTheWeek}</p>
+    <div className="DailyAndHourlyTemperature">
+      <p className="temperatureSummary">{maximumDailyTemperature} &#xb0;</p>
+      <p className="hourly-daily-time">{dayOfTheWeek}</p>
     </div>
   );
 }
