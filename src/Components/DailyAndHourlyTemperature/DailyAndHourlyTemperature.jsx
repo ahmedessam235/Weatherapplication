@@ -26,15 +26,25 @@ function DailyAndHourlyTemperature(props) {
   } else {
     maximumDailyTemperature = props.maxDailyTemperature;
   }
-  var dayOfTheWeek = getDayOfTheWeek(props.day);
-  if (props.id === 0) {
-    //handles the case of the current day to be viewed as Today not by day in hourly view same implementation is needed
-    dayOfTheWeek = "Today";
+  if (props.temperatureReportingTime) {
+    var displayTime = getDayOfTheWeek(props.day);
+    if (props.id === 0) {
+      //handles the case of the current day to be viewed as Today not by day in hourly view same implementation is needed
+      displayTime = "Today";
+    }
+  } else {
+    if (props.id === 0) {
+      //handles the case of the current day to be viewed as Today not by day in hourly view same implementation is needed
+      displayTime = "Now";
+    } else {
+      const fullDate = new Date(props.day * 1000);
+      displayTime = fullDate.getHours() + ":00";
+    }
   }
   return (
     <div className="DailyAndHourlyTemperature">
       <p className="temperatureSummary">{maximumDailyTemperature} &#xb0;</p>
-      <p className="hourly-daily-time">{dayOfTheWeek}</p>
+      <p className="hourly-daily-time">{displayTime}</p>
     </div>
   );
 }

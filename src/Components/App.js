@@ -4,10 +4,11 @@ import DailyAndHourlyTemperature from "./DailyAndHourlyTemperature/DailyAndHourl
 import DailyAndHourlyButtons from "./DailyAndHourlyButtons/DailyAndHourlyButtons";
 import Header from "./Header/Header";
 
+var useDaily = true; //Flag used to determine which view to dispaly daily or hourly temperatures, it's assumed that the user will open on the daily view by default.
 function App() {
   const [temperatureReadings, saveTemperaturedata] = useState(0); //the variable used to store the JSON object from DarkSky Api
   const [measurementUnit, changeMeasurementUinit] = useState("F"); //this  variable is changed based on the celsuis and fahrenite buttons
-  const [temperatureReporting, changeTemperatureReporting] = useState("Daily");
+  var [temperatureReporting, changeTemperatureReporting] = useState({}); //his is container for the array used for daily and hourly temperature reporting
   useEffect(async () => {
     /* this is a work around for the API because they have disabled the CORS this solutin will not work if the aplication is deployed */
 
@@ -24,14 +25,23 @@ function App() {
   function ConvertToFahrenheit() {
     changeMeasurementUinit("F");
   }
+  /* The two fnctions below are used to get the correct array to be passed for the daily or hourly temperature dispaly,
+  since the JSON for daily temperature is  temperatureReadings.daily.data while for hourly data temperatureReadings.hourly.data) */
   function getDailyData() {
-    changeTemperatureReporting("Hourly");
+    changeTemperatureReporting(temperatureReadings.daily.data);
+    useDaily = true;
   }
   function getHourlyData() {
-    changeTemperatureReporting("Daily");
+    changeTemperatureReporting(temperatureReadings.hourly.data);
+    useDaily = false;
   }
   if (temperatureReadings) {
     //check is done to check if the API has responded with the needed data or not.
+    if (useDaily) {
+      temperatureReporting = temperatureReadings.daily.data;
+    } else {
+      temperatureReadings.hourly.data;
+    }
     return (
       <div>
         <Header
@@ -59,20 +69,22 @@ function App() {
           onUsingHourlyTemperature={getHourlyData}
         />
         <hr id="topline"></hr>
-        {temperatureReadings.daily.data.map((temperatureItem, index) => {
+        {temperatureReporting.map((temperatureItem, index) => {
           return (
             <DailyAndHourlyTemperature
               key={index}
               id={index}
               maxDailyTemperature={parseInt(
-                temperatureItem.apparentTemperatureHigh
+                useDaily
+                  ? temperatureItem.apparentTemperatureHigh
+                  : temperatureItem.apparentTemperature
               )}
               day={temperatureItem.time}
               unit={measurementUnit}
+              temperatureReportingTime={useDaily}
             />
           );
         })}
-        <hr id="bottomline"></hr>
       </div>
     );
   } else {
