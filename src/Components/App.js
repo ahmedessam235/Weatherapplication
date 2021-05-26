@@ -23,7 +23,8 @@ function App() {
     changeMeasurementUinit("F");
   }
   console.log(measurementUnit);
-  if (temperatureReadings) { //check is done to check if the API has responded with the needed data or not.
+  if (temperatureReadings) {
+    //check is done to check if the API has responded with the needed data or not.
     return (
       <div>
         <Header
@@ -62,9 +63,14 @@ function App() {
       </div>
     );
   } else {
-    return ( //conditional rendering in case the values are not loaded 
-      <div>
-        <h1> Loading ......</h1>
+    return (
+      //conditional rendering in case the values are not loaded
+      <div class="loading-screen">
+        <h1>
+          {" "}
+          please enter url https://cors-anywhere.herokuapp.com/corsdemo and
+          request access to use the app
+        </h1>
       </div>
     );
   }

@@ -10,3 +10,7 @@
     url('./images/background-image.jpg');
     background-size:cover;
 }
+
+.loading-screen{
+  color: white;
+}
