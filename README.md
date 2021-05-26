@@ -17,5 +17,8 @@ Notes :
   like this : https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast[API KEY]/[Longitutde],[Latitude].
 - the web app uses the latitude and longitude of NewCairo city in egypt and these parameters  embedded in it's code .
 
+updates : 
+ - 26/5/2020 border issues are solved for normal screens 
+ - for mobile border for daily/hours temperature reading is still not fixed.
 
  
