@@ -69,24 +69,23 @@ function App() {
           onUsingHourlyTemperature={getHourlyData}
         />
         <hr id="topline"></hr>
-        <div class="horiztonal-slider"> 
-        {temperatureReporting.map((temperatureItem, index) => {
-          return (
-            <DailyAndHourlyTemperature
-              key={index}
-              id={index}
-              maxDailyTemperature={parseInt(
-                useDaily
-                  ? temperatureItem.apparentTemperatureHigh
-                  : temperatureItem.apparentTemperature
-              )}
-              day={temperatureItem.time}
-              unit={measurementUnit}
-              temperatureReportingTime={useDaily}
-            />
-          );
-        })}
-        
+        <div class="horiztonal-slider">
+          {temperatureReporting.map((temperatureItem, index) => {
+            return (
+              <DailyAndHourlyTemperature
+                key={index}
+                id={index}
+                maxDailyTemperature={parseInt(
+                  useDaily
+                    ? temperatureItem.apparentTemperatureHigh
+                    : temperatureItem.apparentTemperature
+                )}
+                day={temperatureItem.time}
+                unit={measurementUnit}
+                temperatureReportingTime={useDaily}
+              />
+            );
+          })}
         </div>
       </div>
     );
