@@ -29,3 +29,9 @@
   margin: 0 auto;
   margin-top:6%
 }
+/*this styling is used for appending the hourly temperature in one ROW * Note: after searching the easiest part was using the overflow-x 
+CSS property to fit elements in one line */
+.horiztonal-slider{ 
+  display: flex;   
+   overflow-x: auto;
+}
