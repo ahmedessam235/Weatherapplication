@@ -30,12 +30,21 @@ updates :
      missing implementation : 
      - using icons 
      - fixing left margin error for the temperature view
-  
-  To-Do :
-   - fixing styling/bugs
-   - adding server using Node/Express JS for this application in order to stop using CORS anywhere 
-   - finishing all the missing implementation.
-   - adding geolocation detection feature in order to browser to detect the location of the user and sending it dark SKY api
-   - finding a way to detect a city from the latitude and longitude values " probably will be a free API, needs more research "
-   - hosting this application  on heroku or AWS free tier account.
+
+   To-Do :
+    - fixing styling/bugs
+    - adding server using Node/Express JS for this application in order to stop using CORS anywhere 
+    - finishing all the missing implementation.
+    - adding geolocation detection feature in order to browser to detect the location of the user and sending it dark SKY api
+    - finding a way to detect a city from the latitude and longitude values " probably will be a free API, needs more research "
+    - hosting this application  on heroku or AWS free tier account.
+  8/6/2021:
+   - added horzitonal scroll to replace the horizontal line to fit the design more.
+   - fixed all the styling bugs.
+   To-Do :
    
+    - adding server using Node/Express JS for this application in order to stop using CORS anywhere 
+    - finishing all the missing implementation " icon usage, needs reasearching for dark sky API for the icon values "
+    - adding geolocation detection feature in order to browser to detect the location of the user and sending it dark SKY api
+    - finding a way to detect a city from the latitude and longitude values " probably will be a free API, needs more research "
+    - hosting this application  on heroku or AWS free tier account.
