@@ -69,6 +69,7 @@ function App() {
           onUsingHourlyTemperature={getHourlyData}
         />
         <hr id="topline"></hr>
+        <div className="top-line"></div>
         <div class="horiztonal-slider">
           {temperatureReporting.map((temperatureItem, index) => {
             return (
