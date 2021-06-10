@@ -48,3 +48,11 @@ updates :
     - adding geolocation detection feature in order to browser to detect the location of the user and sending it dark SKY api
     - finding a way to detect a city from the latitude and longitude values " probably will be a free API, needs more research "
     - hosting this application  on heroku or AWS free tier account.
+  10/6/2021:
+    - Finalizied front end bugs.
+    - added icons to match the design.
+     To-Do :
+    - adding server using Node/Express JS for this application in order to stop using CORS anywhere 
+    - adding geolocation detection feature in order to browser to detect the location of the user and sending it dark SKY api
+    - finding a way to detect a city from the latitude and longitude values " probably will be a free API, needs more research "
+    - hosting this application  on heroku or AWS free tier account.
