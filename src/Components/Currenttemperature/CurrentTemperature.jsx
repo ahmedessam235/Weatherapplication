@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/CurrentTemperature.css";
-
 function getDayOfTheWeek(TodayDate) {
   var dateConstructor = new Date(TodayDate * 1000);
   var days = [
@@ -49,6 +48,11 @@ function CurrentTemperture(props) {
         <p className="date">
           <b>{todayData}</b>
         </p>
+        <img
+          className="weatherIcon"
+          src={`./images/${props.icon}.png`}
+          alt="icon"
+        />
         <p className="summary">
           <b>{props.summary}</b>
         </p>

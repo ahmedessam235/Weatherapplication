@@ -18,7 +18,6 @@ function getDayOfTheWeek(TodayDate) {
 }
 function DailyAndHourlyTemperature(props) {
   var maximumDailyTemperature = 0;
-
   if (props.unit === "C") {
     maximumDailyTemperature = parseInt(
       (props.maxDailyTemperature - 32) * (5 / 9)
@@ -43,8 +42,13 @@ function DailyAndHourlyTemperature(props) {
   }
   return (
     <div className="DailyAndHourlyTemperature">
-      <p className="temperatureSummary">{maximumDailyTemperature} &#xb0;</p>
       <p className="hourly-daily-time">{displayTime}</p>
+      <img
+        className="weatherIconSummary"
+        src={`./images/${props.icon}.png`}
+        alt="icon"
+      />
+      <p className="temperatureSummary">{maximumDailyTemperature} &#xb0;</p>
     </div>
   );
 }

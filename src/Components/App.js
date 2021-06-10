@@ -63,6 +63,7 @@ function App() {
           unit={measurementUnit}
           temperatureDailyOrHourly={temperatureReporting}
           todaySummary={temperatureReadings.daily.data[0].summary}
+          icon={temperatureReadings.currently.icon}
         />
         <DailyAndHourlyButtons
           onUsingDailyTemperature={getDailyData}
@@ -81,6 +82,7 @@ function App() {
                     ? temperatureItem.apparentTemperatureHigh
                     : temperatureItem.apparentTemperature
                 )}
+                icon={temperatureItem.icon}
                 day={temperatureItem.time}
                 unit={measurementUnit}
                 temperatureReportingTime={useDaily}

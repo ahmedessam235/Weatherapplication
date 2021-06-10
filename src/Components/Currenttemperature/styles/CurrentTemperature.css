@@ -33,3 +33,9 @@
     
     margin-right: 6%;
 }
+
+.weatherIcon {
+    max-width:100px;
+    height: auto;
+    margin-bottom: 10px;
+}
