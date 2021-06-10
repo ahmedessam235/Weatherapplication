@@ -5,12 +5,13 @@
     /* margin:2%; */
     margin-left: 7%;
     margin-top: 1%;  
-    margin-bottom: 1%;
+    /* margin-bottom: 2%; */
     margin-right:2%;
 }
 
 .temperatureSummary{
     margin-left: 10px;
+    margin-bottom: 10px;
 }
 .weatherIconSummary {
     max-width:50px;
